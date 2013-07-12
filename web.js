@@ -1,14 +1,17 @@
 var express = require('express');
-var fs = require('fs');
-
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-var readBuf = new Buffer(1024);
-    fs.readFile('./index.html', readBuf, function (err, data){
+
+var fs = require('fs');
+    fs.open('index.html','r',function opened(err, fd){
 	if (err) throw err;
-	response.send(readBuf.slice(0, data));
-})
+	var readBuffer = new Buffer(1024);
+	    fs.read(fd, readBuffer, function read (err, readBytes){
+	      if (err) throw err;
+	      response.send(readBuffer.slice(0, readBytes));
+});
+});
 });
 
 var port = process.env.PORT || 5000;
