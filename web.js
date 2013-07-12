@@ -1,6 +1,6 @@
 var express = require('express');
-var fs = require('fs');
-var buffer new buffer(256);
+# var fs = require('fs');
+# var buffer new buffer(256);
 
 var app = express.createServer(express.logger());
 
@@ -9,7 +9,7 @@ var app = express.createServer(express.logger());
 #    return(data);
 # })
 
-buffer.write('hello hello');
+# buffer.write('hello hello');
 
 app.get('/', function(request, response) {
   response.send('hello hello');
