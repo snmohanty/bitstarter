@@ -9,10 +9,10 @@ var app = express.createServer(express.logger());
 #    return(data);
 # })
 
-buffer.write("hello hello");
+buffer.write('hello hello');
 
 app.get('/', function(request, response) {
-  response.send(buffer.toString());
+  response.send(buffer);
 });
 
 var port = process.env.PORT || 5000;
