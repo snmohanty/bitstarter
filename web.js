@@ -6,10 +6,13 @@ app.get('/', function(request, response) {
 var fs = require('fs');
     fs.open('index.html','r',function opened(err, fd){
 	if (err) throw err;
+# console.log('fd  '+ fd);
 	var readBuffer = new Buffer(1024);
-	    fs.read(fd, readBuffer, function read (err, readBytes){
+	    fs.readFile(fd, readBuffer, function read (err, readBytes){
 	      if (err) throw err;
-	      response.send(readBuffer.slice(0, readBytes));
+# console.log('readBuffer  '+ readBuffer);
+#	      response.send(readBuffer.slice(0, readBytes));
+		response.send(readBytes);
 });
 });
 });
