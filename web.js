@@ -7,15 +7,15 @@ var fs = require('fs');
 #    fs.open('index.html','r',function opened(err, fd){
 #	if (err) throw err;
 # console.log('fd  '+ fd);
-	var readBuffer = new Buffer(1024);
-	    fs.readFile('index.html', readBuffer, function read (err, readBytes){
-	      if (err) throw err;
+#	var readBuffer = new Buffer(1024);
+	var buffer = fs.readFileSync('index.html');
+#	      if (err) throw err;
 # console.log('readBuffer  '+ readBuffer);
 #	      response.send(readBuffer.slice(0, readBytes));
 #		response.send(readBuffer);
-		response.send('hello ......hello');
+		response.send(buffer.toString());
 # });
-});
+# });
 });
 
 var port = process.env.PORT || 5000;
