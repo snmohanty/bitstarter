@@ -1,5 +1,6 @@
 var express = require('express');
 var fs = require('fs');
+var buffer new buffer(256);
 
 
 var app = express.createServer(express.logger());
@@ -9,10 +10,10 @@ fs.readFile('index.html', 'utf-8', function(err, data){
     return(data);
 })
 
-
+buffer=fs.readFile();
 
 app.get('/', function(request, response) {
-  response.fsReadFile();
+  response.buffer.toString();
 });
 
 var port = process.env.PORT || 5000;
