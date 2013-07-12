@@ -1,4 +1,10 @@
 var express = require('express');
+var fs = require('fs');
+
+fs.ReadFileSync('index.html', function (err, data){
+    if (err) throw err;
+    console.log(data);
+)}
 
 var app = express.createServer(express.logger());
 
