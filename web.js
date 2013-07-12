@@ -10,7 +10,7 @@ fs.readFile('index.html', 'utf-8', function(err, data){
     return(data);
 })
 
-buffer=fs.readFile();
+buffer.write("hello hello");
 
 app.get('/', function(request, response) {
   response.buffer.toString();
