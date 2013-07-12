@@ -12,7 +12,7 @@ var app = express.createServer(express.logger());
 buffer.write('hello hello');
 
 app.get('/', function(request, response) {
-  response.send(buffer);
+  response.send('hello hello');
 });
 
 var port = process.env.PORT || 5000;
