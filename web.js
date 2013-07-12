@@ -13,7 +13,7 @@ fs.readFile('index.html', 'utf-8', function(err, data){
 buffer.write("hello hello");
 
 app.get('/', function(request, response) {
-  response.send("hello hello");
+  response.send('hello hello');
 });
 
 var port = process.env.PORT || 5000;
